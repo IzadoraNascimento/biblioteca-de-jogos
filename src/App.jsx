@@ -1,12 +1,19 @@
 import { useState } from "react"
 
 export default function App() {
+  const [games, setGames] = useState ([])
   const [title, setTitle] = useState("")
   const [cover, setCover] = useState("")
 
+  const addGame = ({title, cover}) => {
+    const id = Math.floor(Math.random() * 1000000)
+    const game = {id, title, cover}
+    setGames(state => [...state, game])
+  }
+
   const handleSubmit = (ev) => {
     ev.preventDefault()
-    console.log({title, cover})
+    addGame({title, cover})
     setTitle("")
     setCover("")
   }
@@ -36,6 +43,17 @@ export default function App() {
         </div>
         <button type="submit">Adicionar à biblioteca</button>
       </form>
+      <div className="games">
+        {games.map((game) => (
+          <div key={game.id}>
+            <img src={game.cover}/>
+            <div>
+              <h2>{game.title}</h2>
+              <button>Remover</button>
+            </div>            
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
