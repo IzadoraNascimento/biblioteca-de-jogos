@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [title, setTitle] = useState("")
+  const [cover, setCover] = useState("")
 
+  const handleSubmit = (ev) => {
+    ev.preventDefault()
+    console.log({title, cover})
+    setTitle("")
+    setCover("")
+  }
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div id="app">
+      <h1>Biblioteca de Jogos</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="title">Titulo:</label>
+          <input 
+            type="text" 
+            name="title" 
+            id="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="cover">Capa:</label>
+          <input 
+            type="text" 
+            name="cover" 
+            id="cover"
+            value={cover}
+            onChange={(e) => setCover(e.target.value)}
+          />
+        </div>
+        <button type="submit">Adicionar à biblioteca</button>
+      </form>
+    </div>
   )
 }
-
-export default App
