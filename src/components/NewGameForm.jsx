@@ -20,18 +20,9 @@ export default function NewGameForm({addGame}) {
 
   return(
     <form onSubmit={handleSubmit}>
-      // componente Pai controlando o componente Filho (componente controlado)
-      <TextInput value={title} setValue={setTitle} />
-      <div>
-        <label htmlFor="cover">Capa:</label>
-        <input 
-          type="text" 
-          name="cover" 
-          id="cover"
-          value={cover}
-          onChange={(e) => setCover(e.target.value)}
-        />
-      </div>
+      {/*componente Pai controlando o componente Filho (componente controlado)*/}
+      <TextInput id="title" label="Título:" value={title} setValue={setTitle} />
+      <TextInput id="cover" label="Capa:" value={cover} setValue={setCover} />
       <button type="submit">Adicionar à biblioteca</button>
     </form>
   )
