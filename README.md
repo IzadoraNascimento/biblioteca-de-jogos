@@ -14,9 +14,11 @@
 
 Os usuários devem ser capazes de:
 
-Neste projeto os usuário podem adicionar uma lista de games, com o titulo do jogo e uma capa. Para adicionar a capa basta inserir o link referente a url da imagem.
+Os usuários têm a liberdade de criar uma lista personalizada de jogos, completos com seus títulos e capas. É uma solução simples e intuitiva: basta inserir o título do jogo e o link da imagem para adicionar uma nova entrada.
 
-Este é um resumo do projeto que utiliza React.js para criar uma aplicação de gerenciamento de dados na tela, com foco na persistência de dados usando LocalStorage, utilização de PropTypes para validação de propriedades e a utilização Hooks.
+- Gerenciamento de Lista de Jogos: Com essa aplicação React, você pode criar e manter uma lista de jogos favoritos de forma prática.
+
+- Inclusão de Capas Personalizadas: Ao adicionar um novo jogo à lista, você pode facilmente fornecer uma capa exclusiva, basta inserir o link da imagem na URL correspondente.
 
 ### Captura de tela
 
